@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+</head>
+<body>
+  <form action="/signin " method="post" style="text-align: center" >
+    <legend style="color: darkblue" align="center">欢迎用户登录</legend>
+    <p style="text-align: center">
+      <tr>
+        <td >用 户：</td>
+      </tr>
+      <tr>
+        <td ><input name="username" placeholder="手机号/邮箱/自定义" value="{{ username }}"></td>
+      </tr>
+    </p>
+    <p style="text-align: center">
+      <tr>
+        <td >密 码：</td>
+      </tr>
+      <tr>
+        <td><input name="password" placeholder="不小于6位数字、字符" type="password"></td>
+      </tr>
+    </p>
+    <p>
+      <tr>
+        <td><input type="checkbox" name="RePW" value="01">记住密码</td>
+      </tr>
+      <tr>
+        <td style="color: #636363">忘记密码？</td>
+      </tr>
+    </p>
+    <p>
+      <tr>
+        <td ><button type="submit">登录</button></td>
+      </tr>
+      <tr>
+        <td><button type="button" onclick="location.href='./login.html'">注册</button></td>
+      </tr>
+    </p>
+      {% if message %}
+  <p style="color:red">{{ message }}</p>
+  {% endif %}
+  </form>
+</body>
+</html>

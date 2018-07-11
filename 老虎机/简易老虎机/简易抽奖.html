@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="format-detection"content="telephone=no, email=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+        <meta name="format-detection" content="telphone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+        <!-- 启用360浏览器的极速模式(webkit) -->
+        <meta name="renderer" content="webkit">
+        <!-- 避免IE使用兼容模式 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+        <meta name="HandheldFriendly" content="true">
+        <!-- 微软的老式浏览器 -->
+        <meta name="MobileOptimized" content="320">
+        <!-- uc强制竖屏 -->
+        <meta name="screen-orientation" content="portrait">
+        <!-- QQ强制竖屏 -->
+        <meta name="x5-orientation" content="portrait">
+        <!-- UC强制全屏 -->
+        <meta name="full-screen" content="yes">
+        <!-- QQ强制全屏 -->
+        <meta name="x5-fullscreen" content="true">
+        <!-- UC应用模式 -->
+        <meta name="browsermode" content="application">
+        <!-- QQ应用模式 -->
+        <meta name="x5-page-mode" content="app">
+        <!-- windows phone 点击无高光 -->
+        <meta name="msapplication-tap-highlight" content="no">
+        <style>
+          *{
+             margin:0;
+             padding:0;
+          }
+          div{
+              margin:0;
+              width:  auto;
+              height: auto;
+              background: url("background.jpg");
+          }
+          ul{
+            text-align: center;
+            margin: 10px auto;
+            overflow: hidden;
+          }
+          ul li{
+             width:100px;
+             height:100px;
+             overflow: hidden;
+             background: #cfff9d;
+             text-align: center;
+             line-height: 10px;
+             display: inline-block;
+             margin:0 1px;  /*设置方框之间的水平间距*/
+             position: relative;
+          }
+          dl{
+            position: absolute;
+            top: 0;
+            left:0;
+            width:100px;
+            height:100px;
+              margin:0 1px;
+          }
+          dd{
+            display: block;
+            width:100px;
+            height:100px;
+
+
+          }
+          .btn{
+            background: #333;
+            text-align: center;
+            color: #ccff67;
+            margin: 0 auto;
+            display: block;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+          }
+          .panel{
+            text-align: center;
+            margin: 50px auto;
+          }
+          .reset{
+            -webkit-animation:flip 1s .2s ease both;
+            display: none;
+          }
+          .flash{
+            -webkit-animation:flash 1s .2s ease both;
+          }
+          .contant{
+            -webkit-animation:wobble 3s .2s ease  both;
+          }
+          @-webkit-keyframes wobble{
+            0%{-webkit-transform:translateX(0%)}
+            15%{-webkit-transform:translateX(-25%) rotate(-5deg)}
+            30%{-webkit-transform:translateX(20%) rotate(3deg)}
+            45%{-webkit-transform:translateX(-15%) rotate(-3deg)}
+            60%{-webkit-transform:translateX(10%) rotate(2deg)}
+            75%{-webkit-transform:translateX(-5%) rotate(-1deg)}
+            100%{-webkit-transform:translateX(0%)}
+          }
+          @-webkit-keyframes flip{
+            0%{-webkit-transform:perspective(400px) rotateY(0);
+            -webkit-animation-timing-function:ease-out}
+            40%{-webkit-transform:perspective(400px) translateZ(150px) rotateY(170deg);
+            -webkit-animation-timing-function:ease-out}
+            50%{-webkit-transform:perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+            -webkit-animation-timing-function:ease-in}
+            80%{-webkit-transform:perspective(400px) rotateY(360deg) scale(.95);
+            -webkit-animation-timing-function:ease-in}
+            100%{-webkit-transform:perspective(400px) scale(1);
+            -webkit-animation-timing-function:ease-in}
+           }
+          @-webkit-keyframes flash{
+            0%,50%,100%{opacity: 1;}
+            25%,75%{opacity: 0;}
+          }
+        </style>
+    </head>
+    <body>
+    <div>
+    <TABLE style="margin: auto;font-family: Forte" >
+         <tr STYLE="background: #080405;text-align: center;color: #ff050a;margin: 0 auto;
+             border: 4px;padding: 10px;font-size: 30px;  " >
+          <td >
+              <button STYLE="background: #080405;text-align: center;color: #ff050a;margin: 0 auto;
+             border: 4px;padding: 10px;font-size: 30px; font-family: Forte">GRAND</button>
+          </td>
+          <td>
+              <output>168000</output>
+          </td>
+      </tr>
+         <tr STYLE="background: #080405;text-align: center;color: #33ff14;margin: 0 auto;
+             border: 4px;padding: 10px;font-size: 25px; ">
+          <td>
+              <button STYLE="background: #080405;text-align: center;color: #33ff14;margin: 0 auto;
+             border: 4px;padding: 10px;font-size: 25px; font-family: Forte">MAJOR</button>
+          </td>
+          <td>
+              <output>500</output>
+          </td>
+      </tr >
+            <tr STYLE="background: #080405;text-align: center;color: #1d31ff;margin: 0 auto;
+             border: 4px;padding: 10px;font-size: 20px; ">
+          <td>
+              <button STYLE="background: #080405;text-align: center;color: #1d31ff;margin: 0 auto;
+             border: 4px;padding: 10px;font-size: 20px;font-family: Forte ">MINOR</button>
+          </td>
+          <td>
+              <output>100</output>
+          </td>
+      </tr>
+      </tr>
+            <tr STYLE="background: #080405;text-align: center;color: #ffae12;margin: 0 auto;
+             border: 4px;padding: 10px;font-size: 15px; ">
+          <td>
+              <button STYLE="background: #080405;text-align: center;color: #ffae12;margin: 0 auto;
+             border: 4px;padding: 10px;font-size: 15px; font-family: Forte" >MINI</button>
+          </td>
+          <td>
+              <output>20</output>
+          </td>
+      </tr>
+     </TABLE>
+        <table style="margin: auto">
+             <tr>
+                 <td >
+                     <button STYLE="background: #080405;text-align: center;color: #ffae12;margin: 0 auto;
+             border: 4px;padding: 10px;font-size: 20px; " >本次获得分数</button>
+                 </td>
+                 <td class="reset">
+                 </td>
+             </tr>
+         </table>
+
+        <ul>
+            <li>
+                <dl class="dl">
+                    <dd><img src="1.jpg" height=100px width=100px/></dd>
+                    <dd><img src="2.jpg" height=100px width=100px/></dd>
+                    <dd><img src="3.jpg" height=100px width=100px/></dd>
+                    <dd><img src="4.jpg" height=100px width=100px/></dd>
+                    <dd><img src="5.jpg" height=100px width=100px/></dd>
+                    <dd><img src="6.jpg" height=100px width=100px/></dd>
+                    <dd><img src="7.jpg" height=100px width=100px/></dd>
+                    <dd><img src="8.jpg" height=100px width=100px/></dd>
+                    <dd><img src="9.jpg" height=100px width=100px/></dd>
+               </dl>
+            </li>
+            <li>
+                <dl class="dl">
+                    <dd><img src="1.jpg" height=100px width=100px/></dd>
+                    <dd><img src="2.jpg" height=100px width=100px/></dd>
+                    <dd><img src="3.jpg" height=100px width=100px/></dd>
+                    <dd><img src="4.jpg" height=100px width=100px/></dd>
+                    <dd><img src="5.jpg" height=100px width=100px/></dd>
+                    <dd><img src="6.jpg" height=100px width=100px/></dd>
+                    <dd><img src="7.jpg" height=100px width=100px/></dd>
+                    <dd><img src="8.jpg" height=100px width=100px/></dd>
+                    <dd><img src="9.jpg" height=100px width=100px/></dd>
+               </dl>
+            </li>
+            <li>
+                <dl class="dl">
+                    <dd><img src="1.jpg" height=100px width=100px/></dd>
+                    <dd><img src="2.jpg" height=100px width=100px/></dd>
+                    <dd><img src="3.jpg" height=100px width=100px/></dd>
+                    <dd><img src="4.jpg" height=100px width=100px/></dd>
+                    <dd><img src="5.jpg" height=100px width=100px/></dd>
+                    <dd><img src="6.jpg" height=100px width=100px/></dd>
+                    <dd><img src="7.jpg" height=100px width=100px/></dd>
+                    <dd><img src="8.jpg" height=100px width=100px/></dd>
+                    <dd><img src="9.jpg" height=100px width=100px/></dd>
+               </dl>
+            </li>
+            <li>
+                <dl class="dl">
+                    <dd><img src="1.jpg" height=100px width=100px/></dd>
+                    <dd><img src="2.jpg" height=100px width=100px/></dd>
+                    <dd><img src="3.jpg" height=100px width=100px/></dd>
+                    <dd><img src="4.jpg" height=100px width=100px/></dd>
+                    <dd><img src="5.jpg" height=100px width=100px/></dd>
+                    <dd><img src="6.jpg" height=100px width=100px/></dd>
+                    <dd><img src="7.jpg" height=100px width=100px/></dd>
+                    <dd><img src="8.jpg" height=100px width=100px/></dd>
+                    <dd><img src="9.jpg" height=100px width=100px/></dd>
+               </dl>
+            </li>
+            <li>
+               <dl class="dl">
+                    <dd><img src="1.jpg" height=100px width=100px/></dd>
+                    <dd><img src="2.jpg" height=100px width=100px/></dd>
+                    <dd><img src="3.jpg" height=100px width=100px/></dd>
+                    <dd><img src="4.jpg" height=100px width=100px/></dd>
+                    <dd><img src="5.jpg" height=100px width=100px/></dd>
+                    <dd><img src="6.jpg" height=100px width=100px/></dd>
+                    <dd><img src="7.jpg" height=100px width=100px/></dd>
+                    <dd><img src="8.jpg" height=100px width=100px/></dd>
+                    <dd><img src="9.jpg" height=100px width=100px/></dd>
+               </dl>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <dl class="dl">
+                    <dd><img src="1.jpg" height=100px width=100px/></dd>
+                    <dd><img src="2.jpg" height=100px width=100px/></dd>
+                    <dd><img src="3.jpg" height=100px width=100px/></dd>
+                    <dd><img src="4.jpg" height=100px width=100px/></dd>
+                    <dd><img src="5.jpg" height=100px width=100px/></dd>
+                    <dd><img src="6.jpg" height=100px width=100px/></dd>
+                    <dd><img src="7.jpg" height=100px width=100px/></dd>
+                    <dd><img src="8.jpg" height=100px width=100px/></dd>
+                    <dd><img src="9.jpg" height=100px width=100px/></dd>
+               </dl>
+            </li>
+            <li>
+                <dl class="dl">
+                    <dd><img src="1.jpg" height=100px width=100px/></dd>
+                    <dd><img src="2.jpg" height=100px width=100px/></dd>
+                    <dd><img src="3.jpg" height=100px width=100px/></dd>
+                    <dd><img src="4.jpg" height=100px width=100px/></dd>
+                    <dd><img src="5.jpg" height=100px width=100px/></dd>
+                    <dd><img src="6.jpg" height=100px width=100px/></dd>
+                    <dd><img src="7.jpg" height=100px width=100px/></dd>
+                    <dd><img src="8.jpg" height=100px width=100px/></dd>
+                    <dd><img src="9.jpg" height=100px width=100px/></dd>
+               </dl>
+            </li>
+            <li>
+                <dl class="dl">
+                    <dd><img src="1.jpg" height=100px width=100px/></dd>
+                    <dd><img src="2.jpg" height=100px width=100px/></dd>
+                    <dd><img src="3.jpg" height=100px width=100px/></dd>
+                    <dd><img src="4.jpg" height=100px width=100px/></dd>
+                    <dd><img src="5.jpg" height=100px width=100px/></dd>
+                    <dd><img src="6.jpg" height=100px width=100px/></dd>
+                    <dd><img src="7.jpg" height=100px width=100px/></dd>
+                    <dd><img src="8.jpg" height=100px width=100px/></dd>
+                    <dd><img src="9.jpg" height=100px width=100px/></dd>
+               </dl>
+            </li>
+            <li>
+                <dl class="dl">
+                    <dd><img src="1.jpg" height=100px width=100px/></dd>
+                    <dd><img src="2.jpg" height=100px width=100px/></dd>
+                    <dd><img src="3.jpg" height=100px width=100px/></dd>
+                    <dd><img src="4.jpg" height=100px width=100px/></dd>
+                    <dd><img src="5.jpg" height=100px width=100px/></dd>
+                    <dd><img src="6.jpg" height=100px width=100px/></dd>
+                    <dd><img src="7.jpg" height=100px width=100px/></dd>
+                    <dd><img src="8.jpg" height=100px width=100px/></dd>
+                    <dd><img src="9.jpg" height=100px width=100px/></dd>
+               </dl>
+            </li>
+            <li>
+               <dl class="dl">
+                    <dd><img src="1.jpg" height=100px width=100px/></dd>
+                    <dd><img src="2.jpg" height=100px width=100px/></dd>
+                    <dd><img src="3.jpg" height=100px width=100px/></dd>
+                    <dd><img src="4.jpg" height=100px width=100px/></dd>
+                    <dd><img src="5.jpg" height=100px width=100px/></dd>
+                    <dd><img src="6.jpg" height=100px width=100px/></dd>
+                    <dd><img src="7.jpg" height=100px width=100px/></dd>
+                    <dd><img src="8.jpg" height=100px width=100px/></dd>
+                    <dd><img src="9.jpg" height=100px width=100px/></dd>
+               </dl>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <dl class="dl">
+                    <dd><img src="1.jpg" height=100px width=100px/></dd>
+                    <dd><img src="2.jpg" height=100px width=100px/></dd>
+                    <dd><img src="3.jpg" height=100px width=100px/></dd>
+                    <dd><img src="4.jpg" height=100px width=100px/></dd>
+                    <dd><img src="5.jpg" height=100px width=100px/></dd>
+                    <dd><img src="6.jpg" height=100px width=100px/></dd>
+                    <dd><img src="7.jpg" height=100px width=100px/></dd>
+                    <dd><img src="8.jpg" height=100px width=100px/></dd>
+                    <dd><img src="9.jpg" height=100px width=100px/></dd>
+               </dl>
+            </li>
+            <li>
+                <dl class="dl">
+                    <dd><img src="1.jpg" height=100px width=100px/></dd>
+                    <dd><img src="2.jpg" height=100px width=100px/></dd>
+                    <dd><img src="3.jpg" height=100px width=100px/></dd>
+                    <dd><img src="4.jpg" height=100px width=100px/></dd>
+                    <dd><img src="5.jpg" height=100px width=100px/></dd>
+                    <dd><img src="6.jpg" height=100px width=100px/></dd>
+                    <dd><img src="7.jpg" height=100px width=100px/></dd>
+                    <dd><img src="8.jpg" height=100px width=100px/></dd>
+                    <dd><img src="9.jpg" height=100px width=100px/></dd>
+               </dl>
+            </li>
+            <li>
+                <dl class="dl">
+                    <dd><img src="1.jpg" height=100px width=100px/></dd>
+                    <dd><img src="2.jpg" height=100px width=100px/></dd>
+                    <dd><img src="3.jpg" height=100px width=100px/></dd>
+                    <dd><img src="4.jpg" height=100px width=100px/></dd>
+                    <dd><img src="5.jpg" height=100px width=100px/></dd>
+                    <dd><img src="6.jpg" height=100px width=100px/></dd>
+                    <dd><img src="7.jpg" height=100px width=100px/></dd>
+                    <dd><img src="8.jpg" height=100px width=100px/></dd>
+                    <dd><img src="9.jpg" height=100px width=100px/></dd>
+               </dl>
+            </li>
+            <li>
+                <dl class="dl">
+                    <dd><img src="1.jpg" height=100px width=100px/></dd>
+                    <dd><img src="2.jpg" height=100px width=100px/></dd>
+                    <dd><img src="3.jpg" height=100px width=100px/></dd>
+                    <dd><img src="4.jpg" height=100px width=100px/></dd>
+                    <dd><img src="5.jpg" height=100px width=100px/></dd>
+                    <dd><img src="6.jpg" height=100px width=100px/></dd>
+                    <dd><img src="7.jpg" height=100px width=100px/></dd>
+                    <dd><img src="8.jpg" height=100px width=100px/></dd>
+                    <dd><img src="9.jpg" height=100px width=100px/></dd>
+               </dl>
+            </li>
+            <li>
+               <dl class="dl">
+                    <dd><img src="1.jpg" height=100px width=100px/></dd>
+                    <dd><img src="2.jpg" height=100px width=100px/></dd>
+                    <dd><img src="3.jpg" height=100px width=100px/></dd>
+                    <dd><img src="4.jpg" height=100px width=100px/></dd>
+                    <dd><img src="5.jpg" height=100px width=100px/></dd>
+                    <dd><img src="6.jpg" height=100px width=100px/></dd>
+                    <dd><img src="7.jpg" height=100px width=100px/></dd>
+                    <dd><img src="8.jpg" height=100px width=100px/></dd>
+                    <dd><img src="9.jpg" height=100px width=100px/></dd>
+               </dl>
+            </li>
+        </ul>
+     <ul style="background: #ffae12;text-align: center">
+         <table style="margin: auto">
+                 <td>
+                     <button class="btn">游戏启动</button>
+                 </td>
+         </table>
+     </ul>
+
+        <audio preload="load" loop="loop" id="audio1">
+          <source src="style.mp3">
+        </audio>
+    </div>
+    </body>
+    <script>
+     var oli=document.getElementsByTagName("li"),
+         reset=document.querySelector(".reset"),
+         btn=document.querySelector(".btn"),
+         odl=document.querySelectorAll(".dl"),
+         Let=10,H=20,first=3,second=5,
+         third=8,cf=cs=ct=0,timer=null,str="";
+         document.getElementById("audio1").play();
+
+        for (var i = 0; i < odl.length; i++) {
+            var html=odl[i].innerHTML;
+                odl[i].innerHTML="";
+                ck=stradd(html,2);
+                odl[i].innerHTML=ck;
+         };
+        console.log(odl);
+        function stradd(str,size){
+            if(Object.prototype.toString.call(str)
+                =="[object String]"){
+                for (var i = 0; i < size; i++) {
+                    str+=str;
+                };
+            }else{
+                return "数据类型错误";
+            }
+             return str;
+        }
+        function getStyle(obj,name){
+           return obj.currentStyle?obj.currentStyle[name]:getComputedStyle(obj,false)[name];
+        }
+        function starmove(obj,json,funEnd){
+            clearInterval(obj.timer);
+            var Bstop=true;
+            obj.timer=setInterval(function(){
+                for(var attr in json){
+                   var speed=0;
+                   if(attr=="opacity"){
+                       var cur=Math.round(parseFloat(getStyle(obj,attr)*100));
+                   }else{
+                       var cur=parseInt(getStyle(obj,attr));
+                   }
+                   speed=(json[attr]-cur)/20;
+                   speed=speed>0?Math.ceil(speed):Math.floor(speed);
+                   if(cur!=json[attr]){
+                        Bstop=false;
+                   }else{
+                        Bstop=true;
+                   }
+
+                   if(attr=="opacity"){
+                       obj.style.opacity=(cur+speed)/100;
+                   }else{
+                       obj.style[attr]=cur+speed+"px";
+                   }
+                }
+
+                if(Bstop){
+                      clearInterval(obj.timer);
+                      if(funEnd)funEnd();
+                }
+            },30)
+         }
+         function run(){
+            for (var i = 0; i < oli.length; i++) {
+                oli[i].value=Math.floor(Math.random()*10);
+            var Num=parseInt(oli[i].value),
+                odl=oli[i].getElementsByTagName("dl")[0],
+                odd=odl.getElementsByTagName("dd"),
+                size=odd.length,
+                height=odl.offsetHeight,
+                tops=odd[Num+(size-Let)].offsetTop;
+                odl.style.top=0;
+                str+=Num;
+                console.log(odl);
+                starmove(odl,{"top":-(tops)},function(){
+                    var Result=parseInt(str);
+                        console.log(Result);
+                        reset.innerText="";
+                        if(Result<9700000000000000){
+                           reset.innerText="10";
+
+                        }else if(Result>97000&&Result<98000){
+                          ct++;
+                          if(ct>third){
+                            reset.innerText="20";
+                          }
+                          reset.innerText="恭喜获得了3等奖";
+                        }else if(Result>98000000000000000&&Result<99500000000000000000000){
+                          cs++;
+                          if(cs>second){
+                            reset.innerText="上公交，一定记得买票！！";
+                          }
+                          reset.innerText="恭喜获得了2等奖";
+                        }else{
+                          cf++;
+                          if(cf>first){
+                            reset.innerText="上公交，一定记得买票！！";
+                          }
+                          reset.innerText="恭喜获得了1等奖";
+                        }
+                        reset.style.display="block";
+                        btn.className="btn";
+                });
+
+           };
+
+         }
+         btn.onclick=function(){
+            str="";
+            reset.style.display="none";
+            this.className="flash btn";
+            run()
+            console.log()
+         }
+    </script>
+</html>

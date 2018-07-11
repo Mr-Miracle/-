@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的主页</title>
+</head>
+<body style="height: 100%; margin: 0">
+<div id="container" style="height: 600%"></div>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+ // Generate data
+var category = [];
+var dottedBase = +new Date();
+var lineData = [];
+var barData = [];
+
+for (var i = 0; i < 20; i++) {
+    var date = new Date(dottedBase += 1000 * 3600 * 24);
+    category.push([
+        date.getFullYear(),
+        date.getMonth() + 1,
+        date.getDate()
+    ].join('-'));
+    var b = Math.random() * 200;
+    var d = Math.random() * 200;
+    barData.push(b)
+    lineData.push(d + b);
+}
+// option
+option = {
+    backgroundColor: '#0f375f',
+    title: {
+        text: '本年运动情况',
+        subtext: '数据来源于Keep',
+        left: 'left'
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow',
+            label: {
+                show: true,
+                backgroundColor: '#333'
+            }
+        }
+    },
+    legend: {
+        data: ['line', 'bar'],
+        textStyle: {
+            left :'center',
+            color: '#ccc'
+        }
+    },
+    xAxis: {
+        data: category,
+        axisLine: {
+            lineStyle: {
+                color: '#ccc'
+            }
+        }
+    },
+    yAxis: {
+        splitLine: {show: false},
+        axisLine: {
+            lineStyle: {
+                color: '#ccc'
+            }
+        }
+    },
+    series: [{
+        name: 'line',
+        type: 'line',
+        smooth: true,
+        showAllSymbol: true,
+        symbol: 'emptyCircle',
+        symbolSize: 15,
+        data: lineData
+    }, {
+        name: 'bar',
+        type: 'bar',
+        barWidth: 10,
+        itemStyle: {
+            normal: {
+                barBorderRadius: 5,
+                color: new echarts.graphic.LinearGradient(
+                    0, 0, 0, 1,
+                    [
+                        {offset: 0, color: '#14c8d4'},
+                        {offset: 1, color: '#43eec6'}
+                    ]
+                )
+            }
+        },
+        data: barData
+    }, {
+        name: 'line',
+        type: 'bar',
+        barGap: '-100%',
+        barWidth: 10,
+        itemStyle: {
+            normal: {
+                color: new echarts.graphic.LinearGradient(
+                    0, 0, 0, 1,
+                    [
+                        {offset: 0, color: 'rgba(20,200,212,0.5)'},
+                        {offset: 0.2, color: 'rgba(20,200,212,0.2)'},
+                        {offset: 1, color: 'rgba(20,200,212,0)'}
+                    ]
+                )
+            }
+        },
+        z: -12,
+        data: lineData
+    }, {
+        name: 'dotted',
+        type: 'pictorialBar',
+        symbol: 'rect',
+        itemStyle: {
+            normal: {
+                color: '#0f375f'
+            }
+        },
+        symbolRepeat: true,
+        symbolSize: [12, 4],
+        symbolMargin: 1,
+        z: -10,
+        data: lineData
+    }]
+};
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+</script>
+</body>
+</html>
+

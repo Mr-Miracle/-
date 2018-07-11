@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>老虎机</title>
+        <script type="text/javascript" src="../js/jquery-1.12.1.js"></script>
+        <style type="text/css">
+            #bigDiv div{
+                height:50px;
+                width:50px;
+                float:left;
+                background-color:red;
+                margin-left:5px;
+                visibility: hidden;
+            }
+            #bigDiv p{
+                margin-left: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div align="center">
+            <div style="display: inline-block;" id = bigDiv>
+                <div><p>西瓜</p></div>
+                <div><p>苹果</p></div>
+                <div><p>香蕉</p></div>
+                <div><p>橘子</p></div>
+                <div><p>梨子</p></div>
+                <div><p>哈密瓜</p></div>
+                <div><p>草莓</p></div>
+                <div><p>水蜜桃</p></div>
+                <div><p>橙子</p></div>
+                <div><p>谢谢</p></div>
+            </div>
+            <br/><br/><br/><br/>
+            <input type="button" id="autoBtn" value="Auto" onclick="autoStop()">
+        </div>
+        <script language="javascript">
+            var allDiv = $("#bigDiv").find("div");
+            var t;
+            var tCicrl = 30;
+            var c = 0;
+            function autoStop(){
+                var index = 11;//11取值范围是大于已有选项项数
+                $(allDiv).each(function(i){
+                    if($(this).css("visibility")!="hidden"){
+                        index = i;
+                    }
+                });
+                if(index == 11){
+                    index = parseInt(9*Math.random());
+                }
+                $(allDiv).eq(index).css("visibility","visible");
+                setTimeout(function(){slotRun(index);},50);
+            }
+            function slotRun(index){
+                if(c<150){
+                    if($(allDiv).eq(index).css("visibility")!="hidden")
+                    {
+                        $(allDiv).eq(index).css("visibility","hidden");
+                        if(index==9){
+                            //clearTimeout(t);
+                            $(allDiv).eq(0).css("visibility","visible");
+                            t = setTimeout(function(){slotRun(0)},tCicrl++);
+                        }else{
+                            //clearTimeout(t);
+                            $(allDiv).eq(index+1).css("visibility","visible");
+                            t = setTimeout(function(){slotRun(++index)},tCicrl++);
+                        }
+                        c++;
+                    }
+                }else{
+                    clearTimeout(t);
+                    tCicrl = 30;
+                    c = 0;
+                }
+            }
+        </script>
+    </body>
+</html>

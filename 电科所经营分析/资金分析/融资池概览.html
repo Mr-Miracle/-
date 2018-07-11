@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en" id="0ff57b8f-8437-4684-96ee-43eb44a3ce4b">
+<head>
+    <meta charset="utf-8" />
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Tell some browsers(such as 360) to use webkit to render -->
+    <meta name="renderer" content="webkit" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="tpl" content="" />
+    <meta name="style" content="businessgrey" />
+    <meta name="mqLv" content="sm" />
+    <meta name="custom" content="no" />
+    <meta name="backgroundImage" content="/cwbase/bi/ep/EPPageDesigner/home.html?action=SaveEPPage&amp;pageid=38fb4e06-bc0e-4ffc-9184-cddd9ea3fabc&amp;url=%2Fcwbase%2Fbi%2Fbinewweb%2FPages%2FZJFX_ZJCGL.htm&amp;section=&amp;save=/cwbase/web/session/BA/EPRequest/PageServiceHandler.ashx&amp;folderid=&amp;filetype=11#" />
+    <meta name="borderWidth" content="0px" />
+    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <noscript>您的浏览器禁止了JavaScript脚本运行，请检查浏览器设置！</noscript>
+    <script src="/cwbase/bi/EP/EPFramework/Service/PageEngine/EPLoader.js"></script>
+    <script src="/cwbase/bi/binewweb/PartJS/BA_Core.js"></script>
+    <script src="/cwbase/bi/binewweb/PartJS/baportlet.js"></script>
+    <script src="/cwbase/web/zj/zjfx/js/zjfx.core.js"></script>
+    <script src="/cwbase/web/zj/zjfx/js/zjfx.rzc.js"></script>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            height: 100%;
+            width: 100%;
+            font-size: 12px;
+            background-color: #1c2330;
+            overflow: hide;
+        }
+
+        .sphbgarrow {
+            background-image: url('/cwbase/web/zj/zjfx/img/greenarrow.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .sphbrarrow {
+            background-image: url('/cwbase/web/zj/zjfx/img/redarrow.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .divselectedframe {
+            background-image: url('/cwbase/web/zj/zjfx/img/kuang.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .dataCellWhole {
+            height: 100%;
+            padding: 2%;
+        }
+
+        .headTitleUnit {
+            width: 80%;
+            height: 8%;
+            color: white;
+            margin: 0%0%0%8%;
+            padding: 1%0%0%0%;
+            text-align: right;
+        }
+
+        .headTitleParent {
+            width: 80%;
+            height: 16%;
+            color: white;
+            margin: 1%0%4%8%;
+            text-align: center;
+            /*cursor: pointer;*/
+        }
+
+        .headTitleChild {
+            width: 74%;
+            height: 34%;
+            color: white;
+            text-align: center;
+            /*cursor: pointer;*/
+            margin: 1%0%1%14%; /*上，右，下，左*/
+        }
+
+        .headTitleThreeChild {
+            width: 68%;
+            height: 22%;
+            color: white;
+            text-align: center;
+            /*cursor: pointer;*/
+            margin: 1%0%1%20%; /*上，右，下，左*/
+        }
+
+        .numberchild {
+            text-align: left;
+            padding: 0%0%0%4%;
+        }
+
+        .headTitlePFont {
+            font-size: 1.8em;
+        }
+
+        .headTitlePCFont {
+            font-size: 1.3em; /*3个子级的父级*/
+        }
+
+        .headTitleFont {
+            font-size: 1.2em;
+        }
+
+        .headTitleCenterFont {
+            font-size: 1.1em;
+        }
+
+        .ThirdChildFont {
+            font-size: 1em;
+        }
+
+        .numberPercentFont {
+            font-size: 0.9em;
+        }
+
+        .fontMouseOver:hover {
+            color: #ffc000;
+            /*cursor: pointer;*/
+        }
+
+        .numberspan {
+            color: #ffc000;
+        }
+
+        .cellFontFocus {
+            color: #00eeee;
+        }
+
+            .cellFontFocus:hover {
+                color: #ffc000;
+                /*cursor: pointer;*/
+            }
+
+        .cellFontNoFocus {
+            color: #ffffff;
+        }
+
+            .cellFontNoFocus:hover {
+                color: #ffc000;
+                /*cursor: pointer;*/
+            }
+
+        .cellFocus {
+            background: #5b9bd5;
+        }
+
+        .cellNoFocus {
+            background: #225486;
+        }
+
+        .spanText {
+            float: left;
+            text-align: left;
+        }
+
+        .spanNumber {
+            float: right;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="funcid" style="display:none;">ZJFX_RZCGL</div>
+    <div class="container-fluid main-content" style="width: 100%; height: 100%;" data-layout="grid">
+        <div class="row" id="unitRow" style="height: 50%;">
+            <div class="col-sm-4 divselectedframe dataCellWhole" id="90182767-3d69-1b3a-cd74-b3292e32320e">
+                <div class="headTitleUnit ThirdChildFont" id="unitEm">
+                    <span>
+                        金额单位：
+                    </span>
+                    <span class="numberspan" id="sjedw">
+
+                    </span>
+                    <span>
+                        ；指标对比：
+                    </span>
+                    <span class="numberspan ">
+                        环比上月
+                    </span>
+                </div>
+                <div class="headTitleParent  cellNoFocus" id="rzye">
+                    <table style="width: 100%; height: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 35%;">
+                                    <div class="fontMouseOver headTitlePFont" style="padding: 1% 1.5%;">
+                                        融资余额
+                                    </div>
+                                </td>
+                                <td style="width: 30%;">
+                                    <div class="numberspan headTitlePFont" id="rzyeze" style="margin: 0% 1%; font-weight: bold;">
+
+                                    </div>
+                                </td>
+                                <td style="width: 3%;">
+                                    <div class="sphbgarrow numberPercentFont" id="rzyearrow">
+                                        &#160;
+                                    </div>
+                                </td>
+                                <td class="numberPercentFont" style="width: 32%;">
+                                    <div style="margin: 0% 1%; text-align: left;">
+                                        <span>
+                                            有息负债
+                                        </span>
+                                        <span class="numberspan" id="rzyeyxfz">
+
+                                        </span>
+                                    </div>
+                                    <div id="rzyebl" style="margin: 0% 1%; text-align: left;">
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="headTitleChild ">
+                    <table style="width: 100%; height: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 55%;">
+                                    <div class="cellFocus" id="wbrz" style="padding: 5% 2%;cursor: pointer;" onclick="btnShowNodeClick('wbrz','2','90182767-3d69-1b3a-cd74-b3292e32320e')">
+                                        <div class="headTitleFont">
+                                            <span class="fontMouseOver ">
+                                                外部融资
+                                            </span>
+                                            <span class="numberspan" id="wbrzze">
+
+                                            </span>
+                                        </div>
+                                        <div class="namechild numberPercentFont">
+                                            (外币<span class="numberspan" id="wbrzwbze"></span>)
+                                            <span class="sphbgarrow" id="wbrzarrow">
+                                                &#160;
+                                            </span>
+                                            <span id="wbrzbl" style="margin: 0% 1%; text-align: left;">
+
+                                            </span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="numberchild ThirdChildFont" style="width: 45%;">
+                                    <div class="fontMouseOver">
+                                        &#160;
+                                        <div class="cellFontNoFocus spanText " style="cursor: pointer;" id="wbrzyhdkmc" onclick="btnShowNodeClick('wbrzyhdkmc','3','90182767-3d69-1b3a-cd74-b3292e32320e')">
+                                            银行贷款
+                                        </div>
+                                        <div id="wbrzyhdk" class="spanNumber">
+
+                                        </div>
+                                    </div>
+                                    <div class="fontMouseOver">
+                                        &#160;
+                                        <div class="cellFontNoFocus spanText" style="cursor: pointer;" id="wbrzzqmc" onclick="btnShowNodeClick('wbrzzqmc','3','90182767-3d69-1b3a-cd74-b3292e32320e')">
+                                            债券
+                                        </div>
+                                        <div id="wbrzzq" class="spanNumber">
+
+                                        </div>
+                                    </div>
+                                    <div class="fontMouseOver">
+                                        &#160;
+                                        <div class="cellFontNoFocus spanText" style="cursor: pointer;" id="wbrzyfpjmc" onclick="btnShowNodeClick('wbrzyfpjmc','3','90182767-3d69-1b3a-cd74-b3292e32320e')">
+                                            应付票据
+                                        </div>
+                                        <div id="wbrzyfpj" class="spanNumber">
+
+                                        </div>
+                                    </div>
+                                    <div class="fontMouseOver">
+                                        <div class="cellFontNoFocus spanText" id="wbrzrzzlmc">
+                                            融资租赁
+                                        </div>
+                                        <div id="wbrzrzzl" class="spanNumber">
+
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="headTitleChild ">
+                    <table style="width: 100%; height: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 55%;">
+                                    <div class="cellNoFocus" id="nbrz" style="padding: 5% 2%;cursor: pointer;" onclick="btnShowNodeClick('nbrz','2','90182767-3d69-1b3a-cd74-b3292e32320e')">
+                                        <div class="headTitleFont">
+                                            <span class="fontMouseOver">
+                                                内部融资
+                                            </span>
+                                            <span class="numberspan" id="nbrzze">
+
+                                            </span>
+                                        </div>
+                                        <div class="namechild ThirdChildFont">
+                                            <span class="sphbgarrow" id="nbrzarrow">
+                                                &#160;
+                                            </span>
+                                            <span class="numberPercentFont" id="nbrzbl" style="margin: 0% 1%; text-align: left;">
+
+                                            </span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="numberchild ThirdChildFont" style="width: 45%;">
+                                    <div class="fontMouseOver">
+                                        &#160;
+                                        <div class="spanText">
+                                            内部贷款
+                                        </div>
+                                        <div id="nbrznbdk" class="spanNumber">
+
+                                        </div>
+                                    </div>
+                                    <div class="fontMouseOver">
+                                        &#160;
+                                        <div class="spanText">
+                                            委托贷款
+                                        </div>
+                                        <div id="nbrzwtdk" class="spanNumber">
+
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-4 dataCellWhole" id="d690622b-8499-9fb5-bcb7-add33fdb780a">
+                <div class="headTitleUnit">
+                </div>
+                <div class="headTitleParent  cellNoFocus" id="rzcb">
+                    <table style="width: 100%; height: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 35%;">
+                                    <div class="fontMouseOver headTitlePFont" style="padding: 1% 1.5%;">
+                                        融资成本
+                                    </div>
+                                </td>
+                                <td style="width: 50%;" class="headTitleCenterFont">
+                                    (融资成本率<span class="numberspan " id="rzcbcbl" style="margin: 0% 1%; font-weight: bold;"></span>)
+                                </td>
+                                <td style="width: 3%;">
+                                    <div class="sphbgarrow numberPercentFont" id="rzcbarrow">
+                                        &#160;
+                                    </div>
+                                </td>
+                                <td style="width: 12%;">
+                                    <div class="numberPercentFont" id="rzcbbl" style="margin: 0% 1%; text-align: left;">
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="headTitleChild ">
+                    <table style="width: 100%; height: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 55%;">
+                                    <div class="cellNoFocus" id="bnljfxe" style="padding: 5% 2%;cursor: pointer;" onclick="btnShowNodeClick('bnljfxe','2','d690622b-8499-9fb5-bcb7-add33fdb780a')">
+                                        <div class="headTitleFont">
+                                            <span class="fontMouseOver">
+                                                本年累计付息额
+                                            </span>
+                                            <span class="numberspan" id="bnljfxeze">
+
+                                            </span>
+                                        </div>
+                                        <div class="namechild numberPercentFont">
+                                            <span class="sphbgarrow" id="bnljfxearrow">
+                                                &#160;
+                                            </span>
+                                            <span id="bnljfxebl" style="margin: 0% 1%; text-align: left;">
+
+                                            </span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="numberchild ThirdChildFont" style="width: 45%;">
+                                    <div class="fontMouseOver">
+                                        &#160;
+                                        <div class="spanText">
+                                            银行贷款
+                                        </div>
+                                        <div id="bnljfxeyhdk" class="spanNumber">
+
+                                        </div>
+                                    </div>
+                                    <div class="fontMouseOver">
+                                        &#160;
+                                        <div class="spanText">
+                                            债券
+                                        </div>
+                                        <div id="bnljfxezq" class="spanNumber">
+
+                                        </div>
+                                    </div>
+                                    <div class="fontMouseOver">
+                                        &#160;
+                                        <div class="spanText">
+                                            贴现
+                                        </div>
+                                        <div id="bnljfxetx" class="spanNumber">
+
+                                        </div>
+                                    </div>
+                                    <div class="fontMouseOver">
+                                        &#160;
+                                        <div class="spanText">
+                                            融资租赁
+                                        </div>
+                                        <div id="bnljfxerzzl" class="spanNumber">
+
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="headTitleChild ">
+                    <table style="width: 100%; height: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 55%;">
+                                    <div class="cellNoFocus" id="bnrzcbl" style="padding: 5% 2%;cursor: pointer;" onclick="btnShowNodeClick('bnrzcbl','2','d690622b-8499-9fb5-bcb7-add33fdb780a')">
+                                        <div class="headTitleFont">
+                                            <span class="fontMouseOver">
+                                                本年融资成本率
+                                            </span>
+                                            <span class="numberspan" id="bnrzcblze">
+
+                                            </span>
+                                        </div>
+                                        <div class="namechild numberPercentFont">
+                                            <span class="sphbgarrow" id="bnrzcblarrow">
+                                                &#160;
+                                            </span>
+                                            <span id="bnrzcblbl" style="margin: 0% 1%; text-align: left;">
+
+                                            </span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="numberchild " style="width: 45%;">
+                                    <div class="fontMouseOver ThirdChildFont">
+                                        &#160;
+                                        <div class="spanText">
+                                            银行贷款
+                                        </div>
+                                        <div id="bnrzcblyhdk" class="numberPercentFont spanNumber">
+
+                                        </div>
+                                    </div>
+                                    <div class="fontMouseOver ThirdChildFont">
+                                        &#160;
+                                        <div class="spanText">
+                                            债券
+                                        </div>
+                                        <div id="bnrzcblzq" class="numberPercentFont spanNumber">
+
+                                        </div>
+                                    </div>
+                                    <div class="fontMouseOver ThirdChildFont">
+                                        &#160;
+                                        <div class="spanText">
+                                            应付票据
+                                        </div>
+                                        <div id="bnrzcblyfpj" class="numberPercentFont spanNumber">
+
+                                        </div>
+                                    </div>
+                                    <div class="fontMouseOver ThirdChildFont">
+                                        &#160;
+                                        <div class="spanText">
+                                            贴现
+                                        </div>
+                                        <div id="bnrzcbltx" class="numberPercentFont spanNumber">
+
+                                        </div>
+                                    </div>
+                                    <div class="fontMouseOver ThirdChildFont">
+                                        &#160;
+                                        <div class="spanText">
+                                            融资租赁
+                                        </div>
+                                        <div id="bnrzcblrzzl" class="numberPercentFont spanNumber">
+
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-4 dataCellWhole" id="1f9b1bd0-a1cc-1158-f287-ecdba9ee9a85">
+                <div class="headTitleUnit">
+                </div>
+                <div id="yynyhrz" class="headTitleParent cellNoFocus ">
+                    <table style="width:100%;height:100%">
+                        <tbody>
+                            <tr>
+                                <td style="width:47%;">
+                                    <div class="headTitlePCFont fontMouseOver" style="padding:1%1.5%;">
+                                        一个月内应还款融资
+                                    </div>
+                                </td>
+                                <td style="width:35%;">
+                                    <div id="yynyhrzze" class="numberspan headTitlePCFont" style="font-weight: bold;margin:0%1%;">
+
+                                    </div>
+                                </td>
+                                <td style="width:3%;">
+                                    <div id="yynyhrzarrow" class="sphbgarrow numberPercentFont">
+                                        &#160;
+                                    </div>
+                                </td>
+                                <td style="width:15%;">
+                                    <div id="yynyhrzbl" class="numberPercentFont" style="margin:0%1%;text-align:left;">
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="headTitleThreeChild  ">
+                    <div id="yhnyhrzyhdk" class="cellNoFocus" style="padding:1%2%;text-align:left;cursor: pointer;" onclick="btnShowNodeClick('yhnyhrzyhdk','2','1f9b1bd0-a1cc-1158-f287-ecdba9ee9a85')">
+                        <table style="width:100%;">
+                            <tbody>
+                                <tr>
+                                    <td style="width:35%;">
+                                        <div class="headTitleFont fontMouseOver" style="padding:1%1.5%;">
+                                            银行贷款
+                                        </div>
+                                    </td>
+                                    <td style="width:72%;">
+                                        <div id="yhnyhrzyhdkze" class="numberspan headTitleFont" style="font-weight: bold;padding:0%20%0%0%;text-align:right;">
+                                        </div>
+                                        <div class="numberPercentFont" style="padding:0%10%0%0%;text-align:right;">
+                                            利息(
+                                            <span id="yhnyhrzyhdklxje" class="numberspan">
+                                            </span>
+                                            )
+                                        </div>
+                                    </td>
+                                    <td style="width:5%;">
+                                        <div id="yhnyhrzyhdkarrow" class="sphbgarrow">
+                                            &#160;&#160;
+                                        </div>
+                                    </td>
+                                    <td style="width:18%;">
+                                        <div id="yhnyhrzyhdkbl" class="numberPercentFont" style="margin:0%1%;text-align:left;">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="headTitleThreeChild ">
+                    <div id="yhnyhrzzq" class="cellNoFocus" style="padding:1%2%;text-align:left;cursor: pointer;" onclick="btnShowNodeClick('yhnyhrzzq','2','1f9b1bd0-a1cc-1158-f287-ecdba9ee9a85')">
+                        <table style="width:100%;">
+                            <tbody>
+                                <tr>
+                                    <td style="width:35%;">
+                                        <div class="headTitleFont fontMouseOver" style="padding:1%1.5%;">
+                                            债券
+                                        </div>
+                                    </td>
+                                    <td style="width:72%;">
+                                        <div id="yhnyhrzzqze" class="numberspan headTitleFont" style="font-weight: bold;padding:0%20%0%0%;text-align:right;">
+                                        </div>
+                                        <div class="numberPercentFont " style="padding:0%10%0%0%;text-align:right;">
+                                            利息(
+                                            <span id="yhnyhrzzqlxje" class="numberspan">
+                                            </span>
+                                            )
+                                        </div>
+                                    </td>
+                                    <td style="width:5%;">
+                                        <div id="yhnyhrzzqarrow" class="sphbgarrow">
+                                            &#160;&#160;
+                                        </div>
+                                    </td>
+                                    <td style="width:18%;">
+                                        <div id="yhnyhrzzqbl" class="numberPercentFont" style="margin:0%1%;text-align:left;">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="headTitleThreeChild ">
+                    <div id="yhnyhrzyfpj" class="cellNoFocus" style="padding:3%2%;text-align:left;cursor: pointer;" onclick="btnShowNodeClick('yhnyhrzyfpj','2','1f9b1bd0-a1cc-1158-f287-ecdba9ee9a85')">
+                        <table style="width:100%;">
+                            <tbody>
+                                <tr>
+                                    <td style="width:35%;">
+                                        <div class="headTitleFont fontMouseOver" style="padding:1%1.5%;">
+                                            应付票据
+                                        </div>
+                                    </td>
+                                    <td style="width:72%;">
+                                        <div id="yhnyhrzyfpjze" class="numberspan headTitleFont" style="font-weight: bold;padding:0%20%0%0%;text-align:right;">
+                                        </div>
+
+                                    </td>
+                                    <td style="width:5%;">
+                                        <div id="yhnyhrzyfpjarrow" class="sphbgarrow">
+                                            &#160;&#160;
+                                        </div>
+                                    </td>
+                                    <td style="width:18%;">
+                                        <div id="yhnyhrzyfpjbl" class="numberPercentFont" style="margin:0%1%;text-align:left;">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="yhnyhrzline" style="position:absolute;width:24%;height:100%;top:0;left:0;background:transparent;z-index:-1">
+                    <!--transparent-->
+                    <canvas id="yhnyhrzlineCanvas" style="width:100%;height:100%;">
+                        您的浏览器不支持canvas！
+                    </canvas>
+                </div>
+            </div>
+        </div>
+        <div id="rzclcPortlet" class="row" style="height: 50%;padding-top:1%">
+            <embed id="linkPortlet"></embed>
+        </div>
+    </div>
+</body>
+</html>
